@@ -1,0 +1,24 @@
+{
+  "name": "ProfileGeneratorforTeams",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azwethinkweizkd/ProfileGeneratorforTeams.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azwethinkweizkd/ProfileGeneratorforTeams/issues"
+  },
+  "homepage": "https://github.com/azwethinkweizkd/ProfileGeneratorforTeams#readme",
+  "dependencies": {
+    "inquire": "^0.4.8",
+    "jest": "^27.0.6"
+  }
+}
