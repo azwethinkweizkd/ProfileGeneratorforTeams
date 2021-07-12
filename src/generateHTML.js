@@ -1,11 +1,23 @@
 function buildTeam(team) {
   //   console.log(team);
+  function genIcon(team) {
+    switch (team) {
+      case "Manager":
+        return '<i class="fa fa-coffee" aria-hidden="true"></i>';
+      case "Engineer":
+        return '<i class="fa fa-file-code-o" aria-hidden="true"></i>';
+      case "Intern":
+        return '<i class="fa fa-graduation-cap" aria-hidden="true"></i>';
+      default:
+        return;
+    }
+  }
   function generateManager(Manager) {
     return `<div class="card text-white bg-primary mb-3 mx-2"
     style="max-width: 18rem">
     <div class="card-body">
       <h5 class="card-title">${Manager.getName()}</h5>
-      <p class="card-text">icon ${Manager.getRole()}</p>
+      <p class="card-text">${genIcon(Manager)} ${Manager.getRole()}</p>
     </div>
     <div class="card mb-3">
       <ul class="list-group list-group-flush">
@@ -24,7 +36,7 @@ function buildTeam(team) {
     style="max-width: 18rem">
     <div class="card-body">
     <h5 class="card-title">${Engineer.getName()}</h5>
-    <p class="card-text">icon ${Engineer.getRole()}</p>
+    <p class="card-text">${genIcon(Engineer)} ${Engineer.getRole()}</p>
     </div>
     <div class="card mb-3">
     <ul class="list-group list-group-flush">
@@ -43,7 +55,7 @@ function buildTeam(team) {
   style="max-width: 18rem">
   <div class="card-body">
     <h5 class="card-title">${Intern.getName()}</h5>
-    <p class="card-text">icon ${Intern.getRole()}</p>
+    <p class="card-text">${genIcon(Intern)} ${Intern.getRole()}</p>
   </div>
   <div class="card mb-3">
     <ul class="list-group list-group-flush">
