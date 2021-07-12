@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/azwethinkweizkd/ProfileGeneratorforTeams#readme",
   "dependencies": {
-    "inquire": "^0.4.8",
+    "inquirer": "^8.1.1",
     "jest": "^27.0.6"
   }
 }

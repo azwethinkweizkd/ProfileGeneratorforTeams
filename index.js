@@ -1,6 +1,9 @@
 const { prompt } = require("inquirer");
 const fs = require("fs");
 const generateHTML = require("./src/generateHTML");
+const Engineer = require("./js/engineer");
+const Manager = require("./js/manager");
+const Intern = require("./js/intern");
 
 const teamMembers = [];
 
@@ -95,8 +98,8 @@ const questionsIntern = [
 ];
 
 function initTeamMem() {
-  prompt(addTeamMem).then((teamMem) => {
-    switch (teamMem) {
+  prompt(addTeamMem).then((res) => {
+    switch (res.teamMember) {
       case "Engineer":
         initEngineer();
         break;
@@ -104,6 +107,8 @@ function initTeamMem() {
         initIntern();
         break;
       default:
+        // console.log(teamMembers);
+        console.log("Generating HTML....");
         fs.writeFileSync(
           "./dist/index.html",
           generateHTML(teamMembers),
@@ -115,24 +120,48 @@ function initTeamMem() {
 }
 
 function initEngineer() {
-  prompt(questionsEngineer).then((res) => {
-    teamMembers.push(res);
-    initTeamMem();
-  });
+  prompt(questionsEngineer).then(
+    ({ engineerName, engineerId, engineerEmail, engineerUserName }) => {
+      const newEngineer = new Engineer(
+        engineerName,
+        engineerId,
+        engineerEmail,
+        engineerUserName
+      );
+      teamMembers.push(newEngineer);
+      initTeamMem();
+    }
+  );
 }
 
 function initIntern() {
-  prompt(questionsIntern).then((res) => {
-    teamMembers.push(res);
-    initTeamMem();
-  });
+  prompt(questionsIntern).then(
+    ({ internName, internId, internEmail, internSchool }) => {
+      const newIntern = new Intern(
+        internName,
+        internId,
+        internEmail,
+        internSchool
+      );
+      teamMembers.push(newIntern);
+      initTeamMem();
+    }
+  );
 }
 
 function init() {
-  prompt(questionsManger).then((res) => {
-    teamMembers.push(res);
-    initTeamMem();
-  });
+  prompt(questionsManger).then(
+    ({ managersName, managersId, managersEmail, managersOffNum }) => {
+      const newManager = new Manager(
+        managersName,
+        managersId,
+        managersEmail,
+        managersOffNum
+      );
+      teamMembers.push(newManager);
+      initTeamMem();
+    }
+  );
 }
 
 init();
