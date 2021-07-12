@@ -1,58 +1,57 @@
-// const Manager = require("../js/manager");
-// const Engineer = require("../js/engineer");
-// const Intern = require("../js/intern");
-
 function buildTeam(team) {
-  function generateManager(manager) {
-    `<div class="card text-white bg-primary mb-3 mx-2"
+  //   console.log(team);
+  function generateManager(Manager) {
+    return `<div class="card text-white bg-primary mb-3 mx-2"
     style="max-width: 18rem">
     <div class="card-body">
-      <h5 class="card-title">${manager.getName()}</h5>
-      <p class="card-text">icon ${manager.getRole()}</p>
+      <h5 class="card-title">${Manager.getName()}</h5>
+      <p class="card-text">icon ${Manager.getRole()}</p>
     </div>
     <div class="card mb-3">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID:${manager.getId()}</li>
+        <li class="list-group-item">ID: ${Manager.getId()}</li>
         <li class="list-group-item">
-          Email: <a href="#">${manager.getEmail()}</a>
+          Email: <a href="mailto:${Manager.getEmail()}" target="_blank" onclick="window.open"('your WS URL');>${Manager.getEmail()}</a>
         </li>
-        <li class="list-group-item">Office Number:${manager.getOfficeNum()}</li>
+        <li class="list-group-item">Office Number: ${Manager.getOfficeNum()}</li>
       </ul>
     </div>
   </div>`;
   }
-  function generateEngineer(engineer) {
-    `<div class="card text-white bg-primary mb-3 mx-2"
+
+  function generateEngineer(Engineer) {
+    return `<div class="card text-white bg-primary mb-3 mx-2"
     style="max-width: 18rem">
     <div class="card-body">
-    <h5 class="card-title">${engineer.getName()}</h5>
-    <p class="card-text">icon ${engineer.getRole()}</p>
+    <h5 class="card-title">${Engineer.getName()}</h5>
+    <p class="card-text">icon ${Engineer.getRole()}</p>
     </div>
     <div class="card mb-3">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">ID:${engineer.getId()}</li>
+      <li class="list-group-item">ID: ${Engineer.getId()}</li>
       <li class="list-group-item">
-        Email: <a href="#">${engineer.getEmail()}</a>
+        Email: <a href="mailto:${Engineer.getEmail()}" target="_blank" onclick="window.open"('your WS URL');">${Engineer.getEmail()}</a>
       </li>
-      <li class="list-group-item">GitHub:<a href="${engineer.getGitHub()}">${engineer.getGitHub()}</a></li>
+      <li class="list-group-item">GitHub: <a href="https://github.com/${Engineer.getGitHub()}">${Engineer.getGitHub()}</a></li>
     </ul>
     </div>
     </div>`;
   }
-  function generateIntern(intern) {
-    `<div class="card text-white bg-primary mb-3 mx-2"
+
+  function generateIntern(Intern) {
+    return `<div class="card text-white bg-primary mb-3 mx-2"
   style="max-width: 18rem">
   <div class="card-body">
-    <h5 class="card-title">${intern.getName()}</h5>
-    <p class="card-text">icon ${intern.getRole()}</p>
+    <h5 class="card-title">${Intern.getName()}</h5>
+    <p class="card-text">icon ${Intern.getRole()}</p>
   </div>
   <div class="card mb-3">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">ID:${intern.getId()}</li>
+      <li class="list-group-item">ID: ${Intern.getId()}</li>
       <li class="list-group-item">
-        Email: <a href="#">${intern.getEmail()}</a>
+         Email: <a href="mailto:${Intern.getEmail()}" target="_blank" onclick="window.open"('your WS URL');>${Intern.getEmail()}</a>
       </li>
-      <li class="list-group-item">School:${intern.getSchool()}</li>
+      <li class="list-group-item">School: ${Intern.getSchool()}</li>
     </ul>
   </div>
     </div>`;
@@ -75,6 +74,8 @@ function buildTeam(team) {
       .filter((employee) => employee.getRole() === "Intern")
       .map((intern) => generateIntern(intern))
   );
+  //   console.log(teamCards);
+  return teamCards;
 }
 
 module.exports = (team) => {
