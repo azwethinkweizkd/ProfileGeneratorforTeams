@@ -3,11 +3,11 @@ function buildTeam(team) {
   function genIcon(team) {
     switch (team.getRole()) {
       case "Manager":
-        return '<i class="fa fa-coffee" aria-hidden="true"></i>';
+        return '<span class="fas fa-mug-hot"></span>';
       case "Engineer":
-        return '<i class="fa fa-file-code-o" aria-hidden="true"></i>';
+        return '<span class="fas fa-glasses"></span>';
       case "Intern":
-        return '<i class="fa fa-graduation-cap" aria-hidden="true"></i>';
+        return '<span class="fa fa-graduation-cap"></span>';
       default:
         return;
     }
@@ -18,7 +18,7 @@ function buildTeam(team) {
     style="max-width: 18rem">
     <div class="card-body">
       <h5 class="card-title">${Manager.getName()}</h5>
-      ${genIcon(Manager)} <p class="card-text"> ${Manager.getRole()}</p>
+      <p class="card-text">${genIcon(Manager)} ${Manager.getRole()}</p>
     </div>
     <div class="card mb-3">
       <ul class="list-group list-group-flush">
@@ -37,7 +37,7 @@ function buildTeam(team) {
     style="max-width: 18rem">
     <div class="card-body">
     <h5 class="card-title">${Engineer.getName()}</h5>
-    ${genIcon(Engineer)}<p class="card-text"> ${Engineer.getRole()}</p>
+    <p class="card-text">${genIcon(Engineer)} ${Engineer.getRole()}</p>
     </div>
     <div class="card mb-3">
     <ul class="list-group list-group-flush">
@@ -56,7 +56,7 @@ function buildTeam(team) {
   style="max-width: 18rem">
   <div class="card-body">
     <h5 class="card-title">${Intern.getName()}</h5>
-    ${genIcon(Intern)}<p class="card-text"> ${Intern.getRole()}</p>
+    <p class="card-text">${genIcon(Intern)} ${Intern.getRole()}</p>
   </div>
   <div class="card mb-3">
     <ul class="list-group list-group-flush">
