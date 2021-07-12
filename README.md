@@ -19,6 +19,8 @@ This application will need to use inquirer and jest.
 
 More to come
 
+![Team Profile Generator Application](assets/gif/applicationScreenshot.gif)
+
 ## Contribution
 
 Kevin Devlin - Main Contributor
@@ -29,3 +31,5 @@ azwethinkweizkd
 ## Test Instructions
 
 Test Instructions
+
+![Team Profile Generator Test](assets/gif/testScreenshot.gif)
